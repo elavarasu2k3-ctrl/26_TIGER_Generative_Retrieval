@@ -1,0 +1,38 @@
+{
+    "project_title": "Comparative Study of Generative Retrieval and Sequential Recommendation Models",
+    "dataset": "Amazon Reviews 2023 - All_Beauty 5-Core",
+    "dataset_statistics": {
+        "users": 253,
+        "products": 356,
+        "interactions": 2535
+    },
+    "data_split": {
+        "method": "Chronological leave-two-out",
+        "training_examples": 1776,
+        "validation_examples": 253,
+        "test_examples": 253
+    },
+    "models_evaluated": [
+        "Popularity",
+        "BPR-MF",
+        "GRU4Rec",
+        "SASRec",
+        "TIGER-style Transformer"
+    ],
+    "evaluation_metrics": [
+        "Recall@5",
+        "Recall@10",
+        "NDCG@5",
+        "NDCG@10"
+    ],
+    "best_test_model": "GRU4Rec",
+    "best_test_recall_at_10": 0.047431,
+    "limitations": [
+        "Small dataset with 253 users and 356 products",
+        "Single chronological train-validation-test split",
+        "CPU-based experiments",
+        "Semantic ID collisions in TIGER-style model",
+        "RQ-VAE fitted on the full product catalog",
+        "Candidate scoring and ranking implementations require equivalence verification"
+    ]
+}
